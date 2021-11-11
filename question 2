@@ -1,0 +1,45 @@
+abstract class PayCalculator{
+	private double payRate;
+	public PayCalculator(double payRate) {
+		this.payRate = payRate;
+	}
+
+public double computePay(int hours) {
+	return payRate*hours;
+
+
+
+
+}
+
+
+}
+
+
+class RegularPay extends PayCalculator{
+	public RegularPay(double payRate) {
+
+	super(payRate);
+	}
+}	
+	class HazardPay extends RegularPay{
+		public HazardPay(double payRate) {
+	
+			super(payRate);
+		}
+		public double computePay(int hours) {
+			
+			return super.computePay(hours)*1.5;
+		}
+		
+	}
+		
+		class run{
+			public static void main(String[] args) {
+				RegularPay regularPay = new RegularPay(150);
+				HazardPay hazardPay = new HazardPay(150);
+				System.out.println("Regular payment for 5 hours:" + regularPay.computePay(5));
+				System.out.print("Hazard payment for 5 hours:" + hazardPay.computePay(5));
+	
+			}
+		}
