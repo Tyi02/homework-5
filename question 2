@@ -34,7 +34,7 @@ class RegularPay extends PayCalculator{
 		
 	}
 		
-		class run{
+		class Main{
 			public static void main(String[] args) {
 				RegularPay regularPay = new RegularPay(150);
 				HazardPay hazardPay = new HazardPay(150);
