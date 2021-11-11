@@ -1,0 +1,27 @@
+package hw;
+
+abstract class DiscountPolicy{
+	abstract double computeDiscount(int count, double itemcost);
+	
+}
+
+class Test extends DiscountPolicy{
+	double computeDiscount(int count, double itemcost)
+
+	{
+		double discount;
+		discount = (itemcost*count*5)/100;
+		
+		return discount;
+	}
+public static void main(String args[]){
+	Test dp = new Test();
+	System.out.print(dp.computeDiscount(50, 100));
+}
+
+
+
+
+
+
+}
