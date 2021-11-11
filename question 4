@@ -1,0 +1,39 @@
+package hw;
+
+
+abstract class DiscountPolicy
+{   
+public abstract double computeDiscount(int count, double itemCost);
+}  
+ 
+class BulkDiscount extends DiscountPolicy
+{   
+private double percent;
+private double minimum;
+
+public BulkDiscount(int minimum, double percent)
+{
+this.minimum = minimum;
+this.percent = percent;
+}
+
+@Override
+public double computeDiscount(int count, double itemCost)
+{
+if (count >= minimum)
+{
+return (percent/100)*(count*itemCost); //discount is total price * percentage discount
+}
+  
+return 0;
+}
+}
+public class Main {
+
+   public static void main(String[] args) {
+       BulkDiscount bd=new BulkDiscount(10,5);
+        System.out.println("Bulk Discount :"+bd.computeDiscount(20, 20));
+
+   }
+
+}
